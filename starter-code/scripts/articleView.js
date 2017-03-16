@@ -54,6 +54,8 @@ articleView.handleCategoryFilter = function() {
 
 articleView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function() {
+    $('article').hide();
+    $('.tab [data-content="' + $(this.target) + '"]').show();
     /* TODO:
       1. Hide all of the .tab-content sections
       2. Fade in the single .tab-content section that is
@@ -81,3 +83,4 @@ articleView.setTeasers = function() {
 articleView.populateFilters();
 articleView.handleAuthorFilter();
 articleView.handleCategoryFilter();
+articleView.handleMainNav();
